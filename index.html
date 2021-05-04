@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="mini-project">
+            <div>โปรแกรมคำนวนภาษีนี้จัดทำเพื่อส่งการบ้าน Course Besic Javascript เพื่อรับใบ Certificate ของ borntodev เท่านั้น  </div>
+            <div>จัดทำโดย นายอภิวิชญ์ บุญประเสริฐ</div>
+            
+        </div>
+        <!-- total-income -->
+        <div class="total-income">
+            <h3>รายได้รวม(ทั้งปี)</h3>
+            <input id="money" type="text" placeholder="ใส่รายได้รวมทั้งปีของคุณ" onkeypress='calculateMoney(document.getElementById("money").value)'>
+        </div>
+       
+         <!-- social-security -->
+         <div class="social-security">
+            <h3>คุณขึ้นสิทธิ์ประกันสังคมหรือไม่</h3>
+            <button id="has-social-security" onclick='social("yes")'>มี</button>
+            <button id="no-social-security" onclick='social("no")'>ไม่มี</button>
+         </div>
+       
+
+         <!-- income-other-channel -->
+        <div class="income-other-channel">
+            <h3>รายได้จากช่องทางอื่นๆ</h3>
+            <div class="red-color">*ถ้าไม่มีรายได้จากช่องทางอื่นๆ ให้ใส่เลข 0</div>
+            <input id="plusMoney" type="text" placeholder="รายได้เสริม" onkeypress='incomeOtherChannel(document.getElementById("plusMoney").value)'>
+        </div>
+
+         <!-- other-tax-deductions-->
+         <div class="other-tax-deductions">
+            <h3>ค่าลดหย่อนอื่นๆ</h3>
+            <div class="red-color">*ถ้าไม่มีค่าลดหย่อนอื่นๆ ให้ใส่เลข 0</div>
+            <input id="tax-deduction" type="text" placeholder="ค่าลดหย่อนอื่นๆ" onkeypress='taxDeduction(document.getElementById("tax-deduction").value)'>
+        </div>
+      
+        
+       <div class="submit-btn">
+        <button onclick="startTaxCalculate()">เริ่มคำนวนภาษี</button>
+       </div>
+      
+    </div>
+
+
+    <p id="demo"></p>
+
+
+    <!-- JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
